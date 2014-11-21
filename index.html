@@ -4,7 +4,6 @@
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" type="text/css" href="style.css">
-  <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 </head>
 
 <body>
@@ -17,7 +16,40 @@
 
   <div class="main">
     <div class="wrapper">
-      <p>[stuff]</p>
+
+
+
+      <div id="tooltip"></div><!-- div to hold tooltip. -->
+      <svg width="960" height="600" id="councilssvg"></svg> <!-- svg to hold the map. -->
+      <script src="councils.js"></script> <!-- creates councils. -->
+      <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+
+
+      <script>
+
+        function tooltipHtml(n, d){ /* function to create html content string in tooltip div. */
+          return "<h4>"+n+"</h4><table>"+
+            "<tr><td>Low</td><td>"+(d.low)+"</td></tr>"+
+            "<tr><td>Average</td><td>"+(d.avg)+"</td></tr>"+
+            "<tr><td>High</td><td>"+(d.high)+"</td></tr>"+
+            "</table>";
+        }
+        
+        var sampleData ={}; /* Sample random data. */ 
+        ["CL"]
+          .forEach(function(d){ 
+            var low=Math.round(100*Math.random()), 
+              mid=Math.round(100*Math.random()), 
+              high=Math.round(100*Math.random());
+            sampleData[d]={low:d3.min([low,mid,high]), high:d3.max([low,mid,high]), 
+                avg:Math.round((low+mid+high)/3), color:d3.interpolate("#ffffcc", "#800026")(low/100)}; 
+          });
+        
+        /* draw councils on id #councilssvg */ 
+        councils.draw("#councilssvg", sampleData, tooltipHtml);
+      </script>
+
+      
     </div>
   </div>
 
