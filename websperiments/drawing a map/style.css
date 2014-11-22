@@ -1,0 +1,25 @@
+.subunit {
+	fill: #eee;
+	}
+
+.subunit:hover{ 
+	fill-opacity: 0.5;
+	}
+
+.subunit.S12000006 { fill: #f00; }
+
+.subunit.S12000011 { fill: #f00; }
+
+.subunit.S12000013 { fill: #f00; }
+
+.subunit.S12000014 { fill: #f00; }
+
+.subunit.S12000015 { fill: #f00; }
+			
+.subunit-boundary {
+	fill: none;
+	stroke: #ddd;
+}
+
+ 
+
