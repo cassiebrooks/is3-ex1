@@ -29,14 +29,33 @@ h1 {
 /* --------------- */
 
 
-.council{
-    fill: none;
-    stroke: #a9a9a9;
-    stroke-width: 1;
+.subunit {
+  fill: #eee;
   }
-.council:hover{
-  fill-opacity:0.5;
+
+.subunit:hover{ 
+  fill-opacity: 0.5;
+  }
+
+.subunit.S12000006 { fill: #f00; }
+
+.subunit.S12000011 { fill: #f00; }
+
+.subunit.S12000013 { fill: #f00; }
+
+.subunit.S12000014 { fill: #f00; }
+
+.subunit.S12000015 { fill: #f00; }
+      
+.subunit-boundary {
+  fill: none;
+  stroke: #ddd;
 }
+
+
+
+
+
 #tooltip {   
   position: absolute;           
   text-align: center;
