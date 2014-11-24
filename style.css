@@ -40,9 +40,10 @@ h1 {
   fill: #eee;
   }
 
-.council:hover{ 
+/* .council:hover{ 
   fill-opacity: 0.5;
   }
+*/
 
 .council.S12000006 { fill: #f00; }
 
