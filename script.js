@@ -14,20 +14,43 @@ var path = d3.geo.path()
 var svg = d3.select("body").append("svg")
     .attr("width", width)
     .attr("height", height);
+
+var div = d3.select("body").append("div")	
+    .attr("class", "tooltip")				
+    .style("opacity", 0);
 		
 d3.json("sco.json", function(sco) {
 	svg.selectAll(".lad")
 		.data(topojson.feature(sco, sco.objects.lad).features)
-		.enter().append("path")
+	.enter().append("path")
 		.attr("class", function(d) { return "council " + d.id; })
-		.on("mouseover", function(d) {
-		   	d3.select(this).style("opacity", "0.7");
-		})
-		.on("mouseleave", function(d) {
-		    d3.select(this).style("opacity", "1.0");
-		})
-		.on("click", function(d, i) { alert("test!"); }) // will hopefully eventually produce modal
 
+
+
+		// tooltips & opacity
+		.on("mouseover", function(d) {
+
+			console.log("mouseover opacity");
+		   	d3.select(this).style("opacity", "0.7");
+
+			console.log("mouseover tooltips");
+            div.style("opacity", "1");
+            })
+
+
+		.on("mouseleave", function(d) {
+
+			console.log("mouseLEAVE opacity");
+			d3.select(this).style("opacity", "1.0");
+
+			console.log("mouseLEAVE tooltips");
+            div.style("opacity", "0");	
+        })
+
+
+
+		// will hopefully eventually produce modal
+		.on("click", function(d, i) { alert("test!"); })
 
 		.attr("d", path)
 		.append("svg:title")
