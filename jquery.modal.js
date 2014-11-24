@@ -35,21 +35,21 @@
 				'box-shadow': '0px 2px 7px #292929',
 				'-moz-box-shadow': '0px 2px 7px #292929',
 				'-webkit-box-shadow': '0px 2px 7px #292929',
-				'border-radius':'10px',
-				'-moz-border-radius':'10px',
-				'-webkit-border-radius':'10px',
+				'border-radius':'4px',
+				'-moz-border-radius':'4px',
+				'-webkit-border-radius':'4px',
 				'background': '#f2f2f2', 
 				'z-index':'50',
 			});
 			$('.modal_close').css({
 				'position':'relative',
-				'top':'-25px',
-				'left':'20px',
-				'float':'right',
+				'top': (options.height-12) + 'px',
+				'left': ((options.width/2) -12) + 'px',
 				'display':'block',
-				'height':'50px',
-				'width':'50px',
+				'height':'25px',
+				'width':'25px',
 				'background': 'url(close.png) no-repeat',
+				'background-size':'contain',
 			});
                         /*Block page overlay*/
 			var pageHeight = $(document).height();
@@ -66,13 +66,13 @@
 			});
 			$('.inner_modal_box').css({
 				'background-color':'#fff',
-				'height':(options.height - 50) + 'px',
-				'width':(options.width - 50) + 'px',
+				'height':(options.height - 10) + 'px',
+				'width':(options.width - 10) + 'px',
 				'padding':'10px',
-				'margin':'15px',
-				'border-radius':'10px',
-				'-moz-border-radius':'10px',
-				'-webkit-border-radius':'10px'
+				'margin':'-20px 5px 5px 5px',
+				'border-radius':'4px',
+				'-moz-border-radius':'4px',
+				'-webkit-border-radius':'4px'
 			});
 		}
 		
@@ -83,7 +83,7 @@
 		}
 		 		
 		 function add_popup_box(){
-			 var pop_up = $('<div class="modal_box"><a href="#" class="modal_close"></a><div class="inner_modal_box"><h2>' + options.title + '</h2><p>' + options.description + '</p></div></div>');
+			 var pop_up = $('<div class="modal_box"><a href="#" class="modal_close"></a><div class="inner_modal_box"><h2 class="title">' + options.title + '</h2><p>' + options.description + '</p></div></div>');
 			 $(pop_up).appendTo('.block_page');
 			 			 
 			 $('.modal_close').click(function(){
