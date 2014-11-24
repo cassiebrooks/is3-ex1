@@ -29,25 +29,25 @@ h1 {
 /* --------------- */
 
 
-.subunit {
+.council {
   fill: #eee;
   }
 
-.subunit:hover{ 
+.council:hover{ 
   fill-opacity: 0.5;
   }
 
-.subunit.S12000006 { fill: #f00; }
+.council.S12000006 { fill: #f00; }
 
-.subunit.S12000011 { fill: #f00; }
+.council.S12000011 { fill: #f00; }
 
-.subunit.S12000013 { fill: #f00; }
+.council.S12000013 { fill: #f00; }
 
-.subunit.S12000014 { fill: #f00; }
+.council.S12000014 { fill: #f00; }
 
-.subunit.S12000015 { fill: #f00; }
+.council.S12000015 { fill: #f00; }
       
-.subunit-boundary {
+.council-boundary {
   fill: none;
   stroke: #ddd;
 }

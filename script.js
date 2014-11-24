@@ -19,7 +19,7 @@ d3.json("sco.json", function(sco) {
 	svg.selectAll(".lad")
 		.data(topojson.feature(sco, sco.objects.lad).features)
 		.enter().append("path")
-		.attr("class", function(d) { return "subunit " + d.id; })
+		.attr("class", function(d) { return "council " + d.id; })
 		.attr("d", path)
 		.append("svg:title")
 		.text(function(d) { return d.properties.LAD13NM; });
@@ -27,7 +27,7 @@ d3.json("sco.json", function(sco) {
 	svg.append("path")
       .datum(topojson.mesh(sco, sco.objects.lad, function(a, b) { return a !== b; }))
       .attr("d", path)
-      .attr("class", "subunit-boundary");
+      .attr("class", "council-boundary");
 		}
 
 	);
