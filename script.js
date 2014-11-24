@@ -22,7 +22,10 @@ d3.json("sco.json", function(sco) {
 		.attr("class", function(d) { return "council " + d.id; })
 		.attr("d", path)
 		.append("svg:title")
-		.text(function(d) { return d.properties.LAD13NM; });
+		.text(function(d) { return d.properties.LAD13NM; })
+
+		// will hopefully eventually produce modal
+		// .on("click", function(d, i) { ... });
 		
 	svg.append("path")
       .datum(topojson.mesh(sco, sco.objects.lad, function(a, b) { return a !== b; }))

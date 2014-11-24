@@ -4,6 +4,8 @@
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js"></script>
+  <script src="jquery.modal.js"></script>
 </head>
 
 <body>
@@ -17,12 +19,20 @@
   <div class="main">
     <div class="wrapper">
 
+      <a href="#" class="modal" style="font-size: 24px; background-color: #f89a1e; color: white; padding: 20px;">Click Here for modal</a>
+
       <script src="http://d3js.org/d3.v3.min.js"></script>
       <script src="http://d3js.org/topojson.v1.min.js"></script>
       <script src="script.js"></script>
       
     </div> <!-- end .wrapper -->
   </div> <!-- end .main -->
+
+  <script>
+    $(document).ready(function(){
+      $('.modal').modal_box();
+    });
+  </script>
 
 </body>
 
