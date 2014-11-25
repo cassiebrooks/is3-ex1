@@ -20,8 +20,10 @@ var tip = d3.tip()
   .attr('class', 'd3-tip')
   .offset([-10, 0])
   .html(function(d) {
-    return 	"<strong>Council Name:</strong> <span style='color:lightgrey'>" + d.properties.LAD13NM + "</span>" + "<br>" +
-			"More information goes here"
+    return 	"<h3 style='padding: 0px;'>Council Name: " + d.properties.LAD13NM + "</h3>"
+			+ "<div class='tooltip-inner'>"
+			+ "[stuff]"
+			+ "</div>"
 			;
   })
  // call d3.tip on map
