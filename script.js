@@ -18,11 +18,13 @@ var svg = d3.select(".main .wrapper .big-map").append("svg")
 // define tooltip	
 var tip = d3.tip()
   .attr('class', 'd3-tip')
-  .offset([-10, 0])
+  .offset([100, -180])
   .html(function(d) {
     return 	"<h3 style='padding: 0px;'>Council Name: " + d.properties.LAD13NM + "</h3>"
 			+ "<div class='tooltip-inner'>"
-			+ "[stuff]"
+			+ "<h4> Population:   " + d.properties.data.population + "</h4>"
+			+ "<h4> Yes Votes:   " + d.properties.data.yes + "%</h4>"
+			+ "<h4> No Votes:   " + d.properties.data.no + "%</h4>"
 			+ "</div>"
 			;
   })
