@@ -161,7 +161,7 @@ h1 {
   visibility: hidden;
 }
 
-.visible {
+.modal-cover-visible {
   background-color: rgba(0, 0, 0, 0.8);
   position:fixed;
   padding:0;

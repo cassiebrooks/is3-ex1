@@ -56,11 +56,20 @@ d3.json("sco.json", function(sco) {
 		.on("mouseover", tip.show)
 		.on("mouseout", tip.hide)
 
+
+
 		// will hopefully eventually produce modal
-		.on("click", modal.show)
+
 		.on("click", function(d) {
-			d3.select(".modal-cover")
-			.attr('class', 'visible')})
+			d3.select(".modal-cover").attr('class', 'modal-cover-visible')
+		})
+
+		//.on("click", console.log("multiple things happening!"))
+		//.on("click", modal.show)
+
+
+
+
 
 		.attr("d", path)
 		.append("svg:title");
