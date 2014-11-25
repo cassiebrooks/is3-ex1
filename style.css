@@ -9,6 +9,7 @@
 body, html {
   margin: 0;
   padding: 0;
+  background-color: rgba(255,255,255,1);
 }
 
 h1 {
@@ -20,10 +21,15 @@ h1 {
   background-color: #DBEDFF;
 }
 
+.main {
+  background-color: rgba(255,255,255,1);
+}
+
 .wrapper {
   max-width: 1200px;
   margin: 0 auto;
   padding: 10px;
+  /* background-color: rgba(255,255,255,1); */
 }
 
 
