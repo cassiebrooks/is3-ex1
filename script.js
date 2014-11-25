@@ -15,48 +15,36 @@ var svg = d3.select("body").append("svg")
     .attr("width", width)
     .attr("height", height);
 
-var div = d3.select("body").append("div")	
-    .attr("class", "tooltip")				
-    .style("opacity", 0);
+// define tooltip	
+var tip = d3.tip()
+  .attr('class', 'd3-tip')
+  .offset([-10, 0])
+  .html(function(d) {
+    return 	"<strong>Council Name:</strong> <span style='color:lightgrey'>" + d.properties.LAD13NM + "</span>" + "<br>" +
+			"More information goes here"
+			;
+  })
+ // call d3.tip on map
+svg.call(tip)
 		
 d3.json("sco.json", function(sco) {
+	// draw areas
 	svg.selectAll(".lad")
 		.data(topojson.feature(sco, sco.objects.lad).features)
-	.enter().append("path")
+		.enter().append("path")
 		.attr("class", function(d) { return "council " + d.id; })
-
-
-
-		// tooltips & opacity
-		.on("mouseover", function(d) {
-
-			console.log("mouseover opacity");
-		   	d3.select(this).style("opacity", "0.7");
-
-			console.log("mouseover tooltips");
-            div.style("opacity", "1");
-            })
-
-
-		.on("mouseleave", function(d) {
-
-			console.log("mouseLEAVE opacity");
-			d3.select(this).style("opacity", "1.0");
-
-			console.log("mouseLEAVE tooltips");
-            div.style("opacity", "0");	
-        })
-
-
+		
+		// tooltips with d3-tip
+		.on("mouseover", tip.show)
+		.on("mouseout", tip.hide)
 
 		// will hopefully eventually produce modal
 		.on("click", function(d, i) { alert("test!"); })
 
 		.attr("d", path)
-		.append("svg:title")
-		.text(function(d) { return d.properties.LAD13NM; })
-
-		
+		.append("svg:title");
+	
+	// draw area boundaries
 	svg.append("path")
       .datum(topojson.mesh(sco, sco.objects.lad, function(a, b) { return a !== b; }))
       .attr("d", path)
