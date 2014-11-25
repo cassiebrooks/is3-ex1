@@ -28,6 +28,22 @@ var tip = d3.tip()
   })
  // call d3.tip on map
 svg.call(tip)
+
+
+// define modal
+var modal = d3.modal()
+	.attr('class', 'd3-modal')
+	.html(function(d) {
+		return "<h3 style='padding: 0px;'>Council Name: " + d.properties.LAD13NM + "</h3>"
+			+ "<div class='modal-inner'>"
+			+ "[stuff]"
+			+ "</div>"
+			;
+  })
+
+ // call d3.modal on map
+svg.call(modal)
+
 		
 d3.json("sco.json", function(sco) {
 	// draw areas
@@ -41,7 +57,7 @@ d3.json("sco.json", function(sco) {
 		.on("mouseout", tip.hide)
 
 		// will hopefully eventually produce modal
-		.on("click", function(d, i) { alert("test!"); })
+		.on("click", modal.show)
 
 		.attr("d", path)
 		.append("svg:title");

@@ -111,13 +111,6 @@ h1 {
 	position: absolute;
 }
 
-
-/* MODAL STYLING */
-
-.inner_modal_box h2.title {
-  margin: 0;
-}
-
 /* d3-tip TOOLTIP STYLING */
 
 .d3-tip {
@@ -136,6 +129,29 @@ h1 {
 }
 
 .d3-tip .tooltip-inner {
+  color: #f3f3f3;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+/* d3-modal MODAL STYLING */
+
+.d3-modal {
+  line-height: 1;
+  font-weight: bold;
+  padding: 12px;
+  background: rgba(40, 40, 40, 0.8);
+  color: #f8f8f8;
+  white-space: pre-line;
+  border-radius: 4px;
+}
+
+.d3-modal h3 {
+  padding: 0;
+  margin: 0 0 15px 0;
+}
+
+.d3-modal .modal-inner {
   color: #f3f3f3;
   font-size: 14px;
   font-weight: normal;
