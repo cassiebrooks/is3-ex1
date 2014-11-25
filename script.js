@@ -59,10 +59,16 @@ d3.json("sco.json", function(sco) {
 
 
 		// will hopefully eventually produce modal
-
 		.on("click", function(d) {
-			d3.select(".modal-cover").attr('class', 'modal-cover-visible')
+			console.log("multiple things happening!");
+			d3.select(".modal-cover").attr('class', 'modal-cover-visible');
+			modal.show(d)
 		})
+
+
+		//.on("click", function(d) {
+		//	d3.select(".modal-cover").attr('class', 'modal-cover-visible')
+		//})
 
 		//.on("click", console.log("multiple things happening!"))
 		//.on("click", modal.show)
