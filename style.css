@@ -87,20 +87,18 @@ h1 {
   display: none;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.panelcontent .mini-map {
+  width: 30%;
+  margin: 5px;
+  padding: 0px;
+  display: inline-block;
+  vertical-align: top;
+  height: 200px;
+  border: 1px solid #616161;
+  border-radius: 2px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+}
 
 
 /* MODAL STYLING */
