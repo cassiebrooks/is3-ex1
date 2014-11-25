@@ -29,7 +29,6 @@ var tip = d3.tip()
  // call d3.tip on map
 svg.call(tip)
 
-
 // define modal
 var modal = d3.modal()
 	.attr('class', 'd3-modal')
@@ -37,9 +36,20 @@ var modal = d3.modal()
 		return "<h3 style='padding: 0px;'>Council Name: " + d.properties.LAD13NM + "</h3>"
 			+ "<div class='modal-inner'>"
 			+ "[stuff]"
+			+ "<button class='close' style='width: 50px; height: 50px; background-color: #f89a1e;'>close meee</div>"
 			+ "</div>"
 			;
   })
+
+
+
+
+
+// d3.select(".d3-modal button").on("click", modal.hide)
+// WHERE DOES THIS GOOOO?  ^^^
+
+
+
 
  // call d3.modal on map
 svg.call(modal)
@@ -56,9 +66,8 @@ d3.json("sco.json", function(sco) {
 		.on("mouseover", tip.show)
 		.on("mouseout", tip.hide)
 
-		// will hopefully eventually produce modal
+		// vaguely produces modal!
 		.on("click", function(d) {
-			console.log("multiple things happening!");
 			d3.select(".modal-cover").attr('class', 'modal-cover-visible');
 			modal.show(d)
 		})
@@ -72,6 +81,7 @@ d3.json("sco.json", function(sco) {
       .attr("d", path)
       .attr("class", "council-boundary");
 		}
-
 	);
+
+
 
