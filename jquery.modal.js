@@ -48,7 +48,7 @@
 				'display':'block',
 				'height':'25px',
 				'width':'25px',
-				'background': 'url(close.png) no-repeat',
+				'background': 'url(/images/close.png) no-repeat',
 				'background-size':'contain',
 			});
                         /*Block page overlay*/
