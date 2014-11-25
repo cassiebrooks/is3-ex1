@@ -58,6 +58,9 @@ d3.json("sco.json", function(sco) {
 
 		// will hopefully eventually produce modal
 		.on("click", modal.show)
+		.on("click", function(d) {
+			d3.select(".modal-cover")
+			.attr('class', 'visible')})
 
 		.attr("d", path)
 		.append("svg:title");
