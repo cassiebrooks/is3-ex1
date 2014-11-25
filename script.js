@@ -69,6 +69,7 @@ d3.json("sco.json", function(sco) {
 		// vaguely produces modal!
 		.on("click", function(d) {
 			d3.select(".modal-cover").attr('class', 'modal-cover-visible');
+			tip.hide(d);
 			modal.show(d)
 		})
 
