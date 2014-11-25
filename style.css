@@ -29,8 +29,84 @@ h1 {
   max-width: 1200px;
   margin: 0 auto;
   padding: 10px;
-  /* background-color: rgba(255,255,255,1); */
 }
+
+.big-map {
+  width: 54%;
+  display: inline-block;
+  vertical-align: top;
+  border: 2px solid #616161;
+  border-radius: 4px;
+}
+
+
+/* COLLAPSIBLE PANELS  STYLING */
+
+.map-options {
+  width: 45%;
+  display: inline-block; 
+  vertical-align: top;
+  height:auto !important;
+}
+
+/* panel */
+.panel, .panelcollapsed {
+  margin: 0 10px 10px 10px;
+  width: 100%;
+  border: 2px solid #616161;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+}
+
+/* panel heading */
+.panel h3, .panelcollapsed h3 {
+  font-size: 16px;
+  font-weight: normal;
+  margin: 0px;
+  padding: 4px;
+  background: #E6E7E8 url(arrow-up.gif) no-repeat 280px;
+  border-bottom: 1px solid #616161;
+  -moz-border-top-radius: 3px;
+  -webkit-border-top-radius: 3px;
+}
+
+/* panel heading on rollover */
+.panel h2:hover, .panelcollapsed h2:hover {
+  background-color: #A9BCEF;
+}
+
+/* heading of a collapsed panel */
+.panelcollapsed h3 {
+  background: #CCC url(arrow-dn.gif) no-repeat 280px;
+  border-color: #CCC;
+}
+
+/* panel content - do not set borders or paddings */
+.panelcontent { 
+  background: #f8f8f8; 
+  overflow: hidden;
+  padding: 5px;
+}
+
+/* collapsed panel content */
+.panelcollapsed .panelcontent {
+  display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* MODAL STYLING */
