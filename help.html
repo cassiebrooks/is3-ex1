@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <link href='style.css' rel='stylesheet' type='text/css'>
+    <script src='panels.js' type='text/javascript'></script>
+  </head>
+  <body>
+    <div class='modal-cover' id='modal-cover'></div>
+    <div class='header'>
+      <div class='wrapper'>
+        <h1>
+          <a href='/' title='Home'>IS3 Data Explorer Tool</a>
+        </h1>
+        <div class='help' style='background-color: #3a3a3a'>
+          <a href='/help.html' title='Tutorials and help'>?</a>
+        </div>
+      </div>
+    </div>
+    <div class='main'>
+      <div class='wrapper help-page'>
+        <h2>Tutorials and Help</h2>
+        <hr>
+        <h3>/!\ Please note</h3>
+        <p>
+          This tool is still in alpha and not all functions are guaranteed to work correctly. Please report any bugs on the
+          <a href='https://github.com/cassiebrooks/is3-ex1'>Github page.</a>
+        </p>
+        <h3>Introduction</h3>
+        <p>This data explorer tool has been developed by Computer Science students at the University of Glasgow to allow the user to explore various datasets on Scotland. Datasets may be compared against each other, or explored in more depth individually. Datasets currently available are:</p>
+        <ul>
+          <li>General</li>
+          <li>Referendum</li>
+          <li>Health</li>
+          <li>Income</li>
+          <li>Employment</li>
+        </ul>
+        <h3>Ways of exploring the data</h3>
+        <ul>
+          <li>
+            <h4>Choose a council to explore for all datasets</h4>
+            <p>Clicking any council in the main map will display the statistics available for that council.</p>
+          </li>
+          <li>
+            <h4>Choose a dataset to explore for all councils</h4>
+            <p>Clicking a mini-map in the right hand panel will show that dataset on the main map.</p>
+            <p>That dataset can then be further explored using the filters in the right hand panel.</p>
+          </li>
+          <li>
+            <h4>Advanced explore: select which councils to compare for which data</h4>
+            <p>While hovering over a council in the main map, you will see a a tickbox to add that council to a customisable graph tool. Up to 5 councils may be compared at once (and we recommend you use at least 2).</p>
+            <p>In the right hand panel under the main map is a list of datasets that can be compared for the selected council. Selecting these will add them to the graph. Up to 5 datasets may be selected.</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
