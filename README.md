@@ -1,5 +1,5 @@
 
-IS DATA EXPLORER
+IS3 DATA EXPLORER
 ================
 
 To test with D3 locally use either:
