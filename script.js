@@ -44,10 +44,33 @@ var modal = d3.modal()
 			;
   })
 
+// // yes_percentage
+// var color = d3.scale.linear()
+//   .domain([32.76, 57.29])
+//   .range(["#FF4040", "#7A0000"]);
+
+// // council_expenditure
+// var color = d3.scale.linear()
+//   .domain([2034, 5268])
+//   .range(["#2BED37", "#010A00"]);
+
+// employment_deprived
+var color = d3.scale.linear()
+  .domain([0.048579131, .15881667])
+  .range(["#4FCDE0", "#004B57"]);
+
 
  // call d3.modal on map
 svg.call(modal)
 
+
+var rateById = {};
+function ready(error, map, data) {
+	data.forEach(function(d) {
+		var employmentDeprivedPercentage = (d.properties.data.employment_deprived) / (d.properties.data.electorate)
+		rateById[d.id] = employmentDeprivedPercentage
+	})
+}
 		
 d3.json("sco.json", function(sco) {
 	// draw areas
@@ -55,7 +78,13 @@ d3.json("sco.json", function(sco) {
 		.data(topojson.feature(sco, sco.objects.lad).features)
 		.enter().append("path")
 		.attr("class", function(d) { return "council " + d.id; })
-		
+
+		// colour councils???
+		.style("fill", function(d) {
+			var employmentDeprivedPercentage = (d.properties.data.employment_deprived) / (d.properties.data.electorate)
+		    return color(employmentDeprivedPercentage);
+		  })
+
 		// tooltips with d3-tip
 		.on("mouseover", tip.show)
 		.on("mouseout", tip.hide)
