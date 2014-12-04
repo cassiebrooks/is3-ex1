@@ -43,14 +43,6 @@ var modal = d3.modal()
   })
 
 
-
-
-
-// d3.select(".d3-modal .modal-inner button").on("click", modal.hide)
-
-
-
-
  // call d3.modal on map
 svg.call(modal)
 
@@ -68,7 +60,7 @@ d3.json("sco.json", function(sco) {
 
 		// vaguely produces modal!
 		.on("click", function(d) {
-			d3.select(".modal-cover").attr('class', 'modal-cover-visible');
+			d3.select(".modal-cover").style({'visibility': 'visible' })
 			tip.hide(d);
 			modal.show(d)
 		})
