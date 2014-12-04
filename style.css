@@ -145,6 +145,11 @@ h1 {
   white-space: pre-line;
   border-radius: 4px;
   z-index: 9999;
+  width:60%;
+  height: 60%;
+  top: 20% !important;
+  left: 20% !important;
+  position: relative;
 }
 
 .d3-modal h3 {
