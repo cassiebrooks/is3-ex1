@@ -4,12 +4,11 @@
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" type="text/css" href="style.css">
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js"></script>
-  <script src="jquery.modal.js"></script>
   <script type="text/javascript" src="panels.js"></script>
 </head>
 
 <body>
+  <div class="modal-cover" id="modal-cover"></div>
 
   <div class="header">
     <div class="wrapper">
@@ -21,11 +20,10 @@
     <div class="wrapper">
       <div class="big-map">
 
-        <a href="#" class="modal" style="font-size: 24px; background-color: #f89a1e; color: white; padding: 20px;">Click Here for modal</a>
-
         <script src="http://d3js.org/d3.v3.min.js"></script>
         <script src="http://d3js.org/topojson.v1.min.js"></script>
   	    <script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+        <script src="modal.js"></script>
         <script src="script.js"></script>
 
       </div><!-- end .big-map -->
@@ -56,12 +54,6 @@
       </div> <!-- end .map-options -->
     </div> <!-- end .wrapper -->
   </div> <!-- end .main -->
-
-  <script>
-    $(document).ready(function(){
-      $('.modal').modal_box();
-    });
-  </script>
 
 </body>
 
