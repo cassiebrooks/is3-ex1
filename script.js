@@ -36,9 +36,9 @@ var modal = d3.modal()
 	.attr('class', 'd3-modal')
 	.attr('id', 'modal')
 	.html(function(d) {
-		return "<h3 style='padding: 0px;'>Council Name: " + d.properties.LAD13NM + "</h3>"
+		return "<h2 style='padding: 0px;'>Council Name: " + d.properties.LAD13NM + "</h2>"
 			+ "<div class='modal-inner'>"
-			+ "[stuff]"
+			+ "<table><tr><td>Population</td><td>" + d.properties.data.electorate + "</td></tr><tr><td>Yes votes</td><td>" + d.properties.data.yes_percentage + "</td></tr><tr><td>No votes</td><td>" + d.properties.data.no_percentage + "</td></tr></table>"
 			+ "<button class='close' onclick='document.getElementById(\"modal\").style.visibility=\"hidden\";document.getElementById(\"modal-cover\").style.visibility=\"hidden\";' style='width: 50px; height: 50px; background-color: #f89a1e;'>close meee</div>"
 			+ "</div>"
 			;
