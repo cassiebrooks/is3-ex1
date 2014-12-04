@@ -32,11 +32,12 @@ svg.call(tip)
 // define modal
 var modal = d3.modal()
 	.attr('class', 'd3-modal')
+	.attr('id', 'modal')
 	.html(function(d) {
 		return "<h3 style='padding: 0px;'>Council Name: " + d.properties.LAD13NM + "</h3>"
 			+ "<div class='modal-inner'>"
 			+ "[stuff]"
-			+ "<button class='close' style='width: 50px; height: 50px; background-color: #f89a1e;'>close meee</div>"
+			+ "<button class='close' onclick='document.getElementById(\"modal\").style.visibility=\"hidden\";document.getElementById(\"modal-cover\").style.visibility=\"hidden\";' style='width: 50px; height: 50px; background-color: #f89a1e;'>close meee</div>"
 			+ "</div>"
 			;
   })
@@ -45,8 +46,7 @@ var modal = d3.modal()
 
 
 
-// d3.select(".d3-modal button").on("click", modal.hide)
-// WHERE DOES THIS GOOOO?  ^^^
+// d3.select(".d3-modal .modal-inner button").on("click", modal.hide)
 
 
 
