@@ -44,7 +44,7 @@ h1 {
 
 .map-options {
   width: 45%;
-  display: inline-block; 
+  display: inline-block;
   vertical-align: top;
   height:auto !important;
 }
@@ -77,8 +77,8 @@ h1 {
   border-color: #CCC;
 }
 
-.panelcontent { 
-  background: #f8f8f8; 
+.panelcontent {
+  background: #f8f8f8;
   overflow: hidden;
   padding: 5px;
 }
@@ -213,38 +213,17 @@ h1 {
 
 /* MAP STYLING */
 
-.council {
-  fill: #eee;
-  }
-
-.council:hover{ 
+.council:hover{
   fill-opacity: 0.5;
   }
 
+.filteredCouncil:hover {
+  fill-opacity: 0.5;
+}
 
-.council.S12000005 { fill: #f00; }
-
-.council.S12000006 { fill: #f00; }
-
-.council.S12000008 { fill: #00f; }
-
-.council.S12000010 { fill: #f00; }
-
-.council.S12000011 { fill: #00f; }
-
-.council.S12000013 { fill: #00f; }
-
-.council.S12000014 { fill: #f00; }
-
-.council.S12000015 { fill: #f00; }
-
-.council.S12000017 { fill: #00f; }
-
-.council.S12000018 { fill: #f00; }
-
-.council.S12000019 { fill: #f00; }
-
-.council.S12000020 { fill: #00f; }
+.filteredCouncil {
+  fill-opacity: 0.05;
+}
 
       
 .council-boundary {

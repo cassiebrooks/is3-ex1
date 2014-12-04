@@ -14,8 +14,11 @@ var path = d3.geo.path()
 var svg = d3.select(".main .wrapper .big-map").append("svg")
     .attr("width", width)
     .attr("height", height);
+  
+var filterMin = 100000;
+var filterMax = 150000;
 
-// define tooltip	
+// define tooltip
 var tip = d3.tip()
   .attr('class', 'd3-tip')
   .offset([100, -180])
@@ -59,14 +62,22 @@ d3.json("sco.json", function(sco) {
 		// tooltips with d3-tip
 		.on("mouseover", tip.show)
 		.on("mouseout", tip.hide)
-
+		
 		// vaguely produces modal!
 		.on("click", function(d) {
-			d3.select(".modal-cover").style({'visibility': 'visible' })
+			d3.select(".modal-cover").style({'visibility': 'visible' });
 			tip.hide(d);
-			modal.show(d)
+			modal.show(d);
 		})
-
+		
+		// add areas to map
+		.attr("d",path)
+		
+		// filter areas
+		.filter(function(d) {return d.properties.data.electorate < filterMin || d.properties.data.electorate > filterMax;})
+		.attr("class", function(d) {return "filteredCouncil " + d.id; })
+  
+    // update filters
 		.attr("d", path)
 		.append("svg:title");
 	
@@ -74,7 +85,8 @@ d3.json("sco.json", function(sco) {
 	svg.append("path")
       .datum(topojson.mesh(sco, sco.objects.lad, function(a, b) { return a !== b; }))
       .attr("d", path)
-      .attr("class", "council-boundary");
+      .attr("class", "council-boundary")
+      ;
 		}
 	);
 
