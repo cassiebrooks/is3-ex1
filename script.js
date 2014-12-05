@@ -36,9 +36,9 @@ var modal = d3.modal()
 	.attr('class', 'd3-modal')
 	.attr('id', 'modal')
 	.html(function(d) {
-		return "<h2 style='padding: 0px;'>Council Name: " + d.properties.LAD13NM + "</h2>"
+		return "<h2 style='padding: 0px;'>" + d.properties.LAD13NM + "</h2>"
 			+ "<div class='modal-inner'>"
-			+ "<table><tr><td>Population</td><td>" + d.properties.data.electorate + "</td></tr><tr><td>Yes votes</td><td>" + d.properties.data.yes_percentage + "</td></tr><tr><td>No votes</td><td>" + d.properties.data.no_percentage + "</td></tr></table>"
+			+ "<table><tr><td>Population</td><td>" + d.properties.data.electorate + "</td><td>Total Votes</td><td>" + d.properties.data.votes + "</td></tr><tr><td>Yes Votes</td><td>" + d.properties.data.yes + "</td><td>Yes (%)</td><td>" + d.properties.data.yes_percentage + "</td></tr><tr><td>No Votes</td><td>" + d.properties.data.no + "</td><td>No (%)</td><td>" + d.properties.data.no_percentage + "</td></tr><tr><td>Council Expenditure Capita</td><td>" + d.properties.data.council_expenditure + "</td><td>SIMD Score</td><td>" + d.properties.data.simd_score + "</td></tr></table>"
 			+ "<button class='close' onclick='document.getElementById(\"modal\").style.visibility=\"hidden\";document.getElementById(\"modal-cover\").style.visibility=\"hidden\";'>X</div>"
 			+ "</div>"
 			;
